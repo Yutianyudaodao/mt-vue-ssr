@@ -1,5 +1,14 @@
 export default {
-  smtp: {
+  dbs:'mongodb://127.0.0.1:27017/student',
+  redis:{
+    get host(){
+      return '127.0.0.1'
+    },
+    get port(){
+      return 6379
+    }
+  },
+  smtp:{
     get host(){
       return 'smtp.qq.com'
     },
@@ -7,19 +16,17 @@ export default {
       return '1396845172@qq.com'
     },
     get pass(){
-      return ''
-    }
-  },
-  //发送4位验证码
-  get code(){
-    return ()=>{
-      return Math.random().toString(16).slice(2,6).toUpperCase()
-    }
-  },
-  //设置过期时间：
-  get expire(){
-    return ()=>{
-      return new Date().getTime()+60*60*60*1000
+      return '931020cx'
+    },
+    get code(){
+      return ()=>{
+        return Math.random().toString(16).slice(2,6).toUpperCase()
+      }
+    },
+    get expire(){
+      return ()=>{
+        return new Date().getTime()+60*60*1000
+      }
     }
   }
 }
