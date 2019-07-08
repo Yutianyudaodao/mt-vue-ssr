@@ -1,6 +1,6 @@
 <template>
   <div class="m-geo">
-    <i class="el-icon-location"/>{{name}}
+    <i class="el-icon-location"/>
     <nuxt-link
       class="changeCity"
       to="/changeCity">切换城市</nuxt-link>
@@ -13,9 +13,7 @@ import { mapState } from 'vuex'
 export default {
   name: "geo",
   computed:{
-    ...mapState('geo',{
-      city:state=>state.position.city
-    })
+    
   }
 }
 </script>

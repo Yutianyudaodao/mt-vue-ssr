@@ -5,7 +5,7 @@ import home from './modules/home'
 
 Vue.use(Vuex)
 
-const store = () => new Vuex.store({
+export const store = () => new Vuex.Store({
   modules:{
     geo,
     home
@@ -20,4 +20,3 @@ const store = () => new Vuex.store({
   }
 })
 
-export default store
