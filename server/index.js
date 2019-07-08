@@ -11,7 +11,7 @@ import json from 'koa-json';
 import dbConfig from './dbs/config';
 import passport from './interface/utils/passport'
 import users from './interface/users'
-// import geo from './interface/geo'
+import geo from './interface/geo'
 // import search from './interface/search'
 // import categroy from './interface/categroy'
 // import cart from './interface/cart'
@@ -61,6 +61,7 @@ async function start() {
 
   //注册路由
   app.use(users.routes()).use(users.allowedMethods());
+  app.use(geo.routes()).use(geo.allowedMethods());
 
   app.use((ctx) => {
     ctx.status = 200
