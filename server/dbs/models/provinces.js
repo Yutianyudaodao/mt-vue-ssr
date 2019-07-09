@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
-const Province=new Schema({
-  id:{
-    type:String,
-    require:true
+const Province = new Schema({
+  id: {
+    type: String,
+    require: true
   },
-  value:{
-    type:Array,
-    require:true
+  value: {
+    type: String,
+    require: true
   }
 })
 

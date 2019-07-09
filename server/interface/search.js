@@ -4,7 +4,7 @@ import Poi from '../dbs/models/poi';
 
 let router = new Router({prefix:'/search'});
 
-router.get('/top',(ctx)=>{
+router.get('/top',async (ctx)=>{
   try {
     let top = await Poi.find({
       'name': new RegExp(ctx.query.input),
@@ -53,3 +53,5 @@ router.get('/hotPlace', async (ctx) => {
   }
   
 })
+
+export default router

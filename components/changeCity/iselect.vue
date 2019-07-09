@@ -45,29 +45,29 @@ export default {
   watch:{
     pvalue:async function(newPvalue){
       let self=this;
-      let {status,data:{city}}=await self.$axios.get(`/geo/province/${newPvalue}`)
-      if(status===200){
-        self.city=city.map(item=>{
-          return {
-            value:item.id,
-            label:item.name
-          }
-        })
-        self.cvalue=''
-      }
+      // let {status,data:{city}}=await self.$axios.get(`/geo/province/${newPvalue}`)
+      // if(status===200){
+      //   self.city=city.map(item=>{
+      //     return {
+      //       value:item.id,
+      //       label:item.name
+      //     }
+      //   })
+      //   self.cvalue=''
+      // }
     }
   },
   mounted:async function(){
     let self=this;
-    let {status,data:{province}}=await self.$axios.get('/geo/province')
-    if(status===200){
-      self.province=province.map(item=>{
-        return {
-          value:item.id,
-          label:item.name
-        }
-      })
-    }
+    // let {status,data:{province}}=await self.$axios.get('/geo/province')
+    // if(status===200){
+    //   self.province=province.map(item=>{
+    //     return {
+    //       value:item.id,
+    //       label:item.name
+    //     }
+    //   })
+    // }
   },
   methods:{
     querySearchAsync:_.debounce(async function(query,cb){
@@ -75,15 +75,15 @@ export default {
       if(self.cities.length){
         cb(self.cities.filter(item => item.value.indexOf(query)>-1))
       }else{
-        let {status,data:{city}}=await self.$axios.get('/geo/city')
-        if(status===200){
-          self.cities=city.map(item=>{return {
-            value:item.name
-          }})
-          cb(self.cities.filter(item => item.value.indexOf(query)>-1))
-        }else{
-          cb([])
-        }
+        // let {status,data:{city}}=await self.$axios.get('/geo/city')
+        // if(status===200){
+        //   self.cities=city.map(item=>{return {
+        //     value:item.name
+        //   }})
+        //   cb(self.cities.filter(item => item.value.indexOf(query)>-1))
+        // }else{
+        //   cb([])
+        // }
       }
     },200),
     handleSelect:function(item){

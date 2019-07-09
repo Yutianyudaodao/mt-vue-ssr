@@ -2,8 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _1a410341 = () => interopDefault(import('../pages/changeCity.vue' /* webpackChunkName: "pages/changeCity" */))
 const _62761424 = () => interopDefault(import('../pages/exit.vue' /* webpackChunkName: "pages/exit" */))
 const _4bd7685a = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
+const _fcf99b2c = () => interopDefault(import('../pages/products.vue' /* webpackChunkName: "pages/products" */))
 const _43964fae = () => interopDefault(import('../pages/register.vue' /* webpackChunkName: "pages/register" */))
 const _106ca8bc = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
 
@@ -82,6 +84,10 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/changeCity",
+      component: _1a410341,
+      name: "changeCity"
+    }, {
       path: "/exit",
       component: _62761424,
       name: "exit"
@@ -89,6 +95,10 @@ export function createRouter() {
       path: "/login",
       component: _4bd7685a,
       name: "login"
+    }, {
+      path: "/products",
+      component: _fcf99b2c,
+      name: "products"
     }, {
       path: "/register",
       component: _43964fae,
